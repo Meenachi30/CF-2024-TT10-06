@@ -1,11 +1,11 @@
-# Makefile
+benc# Makefile
 # See https://docs.cocotb.org/en/stable/quickstart.html for more info
 
 # defaults
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = tt_um_Meenachi.v full.v empty.v fifo_mem.v sync_r2w.v sync_w2r.v clock_div.v
 
 ifneq ($(GATES),yes)
 
@@ -35,7 +35,7 @@ COMPILE_ARGS 		+= -I$(SRC_DIR)
 
 # Include the testbench sources:
 VERILOG_SOURCES += $(PWD)/tb.v
-TOPLEVEL = tb
+TOPLEVEL = testbench
 
 # MODULE is the basename of the Python test file
 MODULE = test
